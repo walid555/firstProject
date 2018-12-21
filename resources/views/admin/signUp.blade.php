@@ -36,27 +36,34 @@ if($message)
   	?>
   </p>
 	<div class="login-html">
-		<div>
-		<label for="tab-1" class="tab pull-right" style="color:white;margin-top:-30px">تسجيل الدخول</label>
-	    </div>
-		<div class="login-form" style="margin-top:50px">
-				<form action="{{url('showAdmin')}}" method="post">
+		<label for="tab-2" class="tab pull-right" style="color:white;margin-top:-50px">انشاء حساب جديد</label>
+		<div class="login-form" style="margin-top:20px">
+			<div>
+				<form action="{{url('saveAdmin')}}" method="post">
 					{{ csrf_field() }}
 				<div class="group">
-					<label for="user" class="label">البريد الالكتروني</label>
-					<input id="user" type="text" class="input" name="userEmail">
+					<label for="user" class="label">اسم المستخدم</label>
+					<input id="user" type="text" class="input" name="userName">
+				</div>
+                <div class="group">
+					<label for="pass" class="label">البريد الالكتروني</label>
+					<input id="pass" type="text" class="input" name="email">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">كلمة السر</label>
-					<input id="pass" type="password" class="input" data-type="password" name="pass">
+					<input id="pass" type="password" class="input" data-type="password" name="password">
 				</div>
 				<div class="group">
-					<input type="submit" class="button" value="تسجيل">
+					<label for="pass" class="label">اعادة ادخال كلمة السر</label>
+					<input id="pass" type="password" class="input" data-type="password" name="repeatPassword">
 				</div>
-				</form>
+				<div class="group">
+					<input type="submit" class="button" value="انشاء حساب">
+				</div>
 				<div class="hr"></div>
 			</form>
-			</div>
+		</div>
+	</div>
 </div>
 
 <script src="{{asset('backend/bower_components/jquery/dist/jquery.min.js')}}"></script>

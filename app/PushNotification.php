@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PushNotification extends Model
 {
-    protected $table="PushNotification";
+    protected $table="pushNotification";
     protected $primaryKey="notificationId";
     public $incrementing=false;
 }

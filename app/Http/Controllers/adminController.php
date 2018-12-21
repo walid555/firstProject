@@ -13,9 +13,13 @@ session_start();
 
 class adminController extends Controller
 {
-    public function index()
+    public function login()
     {
     	return view('admin.login');
+    }
+    public function signUp()
+    {
+        return view('admin.signUp');
     }
     public function adminHome()
     {
@@ -37,12 +41,12 @@ class adminController extends Controller
     	$user_pass=$request->pass;
     	if ($admin_pass==$admin_rpass) {
     		$adminData->save();
-    		return Redirect::to('admin');
+    		return Redirect::to('login');
     	}
     	else
     	   {
              Session::put('message','Password invalid');
-              return Redirect::to('admin');
+              return Redirect::to('signUp');
     	   }
     	
     }
@@ -62,7 +66,7 @@ class adminController extends Controller
     	        else
     	        {
                   Session::put('message','Email or Password invalid');
-                  return Redirect::to('admin');
+                  return Redirect::to('login');
     	        }
     }
     public function personalHome($adminId)
@@ -84,7 +88,7 @@ class adminController extends Controller
     public function logout()
     {
     	Session::flush();
-         return Redirect::to('admin');
+         return Redirect::to('lohin');
     }
     public function AdminAuthCheck()
     {
@@ -94,7 +98,7 @@ class adminController extends Controller
         }
         else
         {
-           return Redirect::to('admin')->send(); 
+           return Redirect::to('login')->send(); 
         }
     }
 }

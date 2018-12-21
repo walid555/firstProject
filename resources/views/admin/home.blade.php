@@ -77,6 +77,7 @@ $adminInfo=Admin::where('adminId',$adminId)->first();
                     <div class="col-md-8 clearfix">
                         <div class="shop-menu clearfix pull-right">
                             <ul class="nav navbar-nav">
+                              <li><a href="{{url('signUp')}}"><i class="fa fa-edit"></i> انشاء حساب</a></li>
                                 <li><a href="{{url('personalHome/'.$adminId)}}"><i class="fa fa-user"></i> الصفحة الشخصية</a></li>
                                 <li><a href="{{url('logout')}}"><i class="fa fa-lock"></i> تسجيل الخروج</a></li>
                             </ul>
@@ -136,6 +137,7 @@ $adminInfo=Admin::where('adminId',$adminId)->first();
                   <th>صورة الملف</th>
                   <th>فيديو الملف</th>
                   <th>الحدث</th>
+                  <th></th>
                 </tr>
                 @foreach($allFiles as $v_file)
                 <tr>
@@ -160,7 +162,7 @@ $adminInfo=Admin::where('adminId',$adminId)->first();
                   <i class="glyphicon glyphicon-trash"></i>
                   </td>
                   <td>	
-                  <a class="btn btn-success" href="{{URL::to('sendFile/'.$v_file->fileId)}}">
+                  <a class="btn btn-success" href="{{URL::to('notification/'.$v_file->fileId)}}">
                   <i class="glyphicon glyphicon-envelope"></i>
                   </td>
                 </tr>
